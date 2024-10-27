@@ -267,18 +267,41 @@ form button:hover {
     transform: scale(1.1);
 }
 
-/* Style for hidden slide
+/*Style for hidden slide*/
 .hidden {
     display: none;
 }
 
-/* Slide active state */
-/* .slide {
+/*Slide active state*/
+.slide {
     padding: 60px 20px;
     background-color: #fff3e0;
     animation: fadeIn 1.5s ease-in-out;
     text-align: center;
-}  */
+} 
+
+/* Untuk menyembunyikan slide secara default */
+.slide.hidden {
+    display: none;
+}
+
+/* Styling untuk galeri gambar */
+.skills-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.skill-item {
+    width: 150px;
+    text-align: center;
+}
+
+.skill-item img {
+    width: 100%;
+    border-radius: 8px;
+}
 
 /* Footer */
 footer {

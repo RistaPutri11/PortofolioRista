@@ -6,6 +6,13 @@
     <title>Portfolio Rista</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+
+    <style>
+         /*CSS untuk menyembunyikan elemen */
+         #hobby-goal-slide {
+            display: none;
+        }
+    </style>
 </head>
 <body>
 
@@ -13,7 +20,7 @@
     <header>
         <nav>
             <ul>
-                <li><a href="#home">Home</a></li>
+                <li><a href="#intro">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -22,13 +29,14 @@
     </header>
 
     <!-- Section untuk Home -->
-    <div id=".intro" class="intro">
+    <div id="intro" class="intro">
         <img src="rista.jpg" alt="Deskripsi Gambar" class="profile-image">
         <div class="text-content">
             <!-- Element untuk efek mengetik -->
             <h1 class="typewriter"></h1>
             <p class="sub-intro">Student UB</p>
             <button class="fixed-button" id="contact-button">Contact Me</button>
+            <button id="open-skill-slide" class="fixed-button">View Skills</button>
         </div>
     </div>
     
@@ -43,50 +51,146 @@
             My message is, life is a choice and we ourselves determine the choice, if you want your future to be 
             good then choose a good path to achieve it.
         </p>
+         <button id="hobby-goal-button" class="fixed-button">Show hobbies and goals</button>
     </section>
 
-    <!-- Skills Section -->
-    <section id="skills">
-        <h2>My Skills</h2>
-        <div class="skills-container">
-            <div class="skill">
-                <h3>Desain Grafis</h3>
-                <div class="skill-bar">
-                    <div class="progress html-css">80%</div>
+    <!-- Hobby, Goal, and Quotes Slide -->
+    <section id="hobby-goal-slide" class="slide hidden">
+        <h2>Hobbies, Goals, dan Quotes</h2>
+        <h3>Hobbies</h3>
+        <p>Graphic designing, writing, exercising and traveling.</p>
+        <h3>Goals</h3>
+        <p>My dream is to become a successful entrepreneur in the technology and creative fields.</p>
+        <h3>Quotes</h3>
+        <p>"A life is a choice and we ourselves determine the choice, if you want your future to be 
+            good then choose a good path to achieve it."</p>
+        <button id="back-to-about-button" class="fixed-button">Back to About Me</button>
+    </section>
+
+        <!-- Skills Section -->
+        <section id="skills">
+            <h2>My Skills</h2>
+            <div class="skills-container">
+                <div class="skill">
+                    <h3>Design and Drawing</h3>
+                    <p onclick="showSkillSlide('designSlide')">Show</p>
+                    <div class="skill-bar">
+                        <div class="progress html-css">75%</div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <h3>Bussiness Marketing</h3>
+                    <p onclick="showSkillSlide('marketingSlide')">Show</p>
+                    <div class="skill-bar">
+                        <div class="progress js">80%</div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <h3>Copywriting</h3>
+                    <p onclick="showSkillSlide('copywritingSlide')">Show</p>
+                    <div class="skill-bar">
+                        <div class="progress react">75%</div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <h3>Photography</h3>
+                    <p onclick="showSkillSlide('photographySlide')">Show</p>
+                    <div class="skill-bar">
+                        <div class="progress nodejs">80%</div>
+                    </div>
                 </div>
             </div>
-            <div class="skill">
-                <h3>Marketing</h3>
-                <div class="skill-bar">
-                    <div class="progress js">90%</div>
-                </div>
-            </div>
-            <div class="skill">
-                <h3>Coppy Writing</h3>
-                <div class="skill-bar">
-                    <div class="progress react">85%</div>
-                </div>
-            </div>
-            <div class="skill">
-                <h3>Drawing</h3>
-                <div class="skill-bar">
-                    <div class="progress nodejs">80%</div>
-                </div>
-            </div>
+        </section>
+
+        <!-- Skill Slides (Hidden by Default) -->
+        <div id="designSlide" class="skill-slide">
+            <h3>Design</h3>
+            <img src="Desain 1.jpg" alt="Design Image 1">
+            <img src="Desain 2.jpg" alt="Design Image 2">
+            <img src="RE1.png" alt="Design Image 3">
+            <img src="RE2.png" alt="Design Image 4">
+            <img src="RE3.png" alt="Design Image 5">
+            <img src="RE4.png" alt="Design Image 6">
+            <button onclick="hideSkillSlide('designSlide')">Back</button>
         </div>
-    </section>
 
-    <body>
-    
+        <div id="marketingSlide" class="skill-slide">
+            <h3>Marketing</h3>
+            <img src="Marketing 1.jpg" alt="Marketing Image 1">
+            <img src="Marketing 2.jpg" alt="Marketing Image 2">
+            <img src="Marketing 3.jpg" alt="Marketing Image 3">
+            <img src="Marketing 4.jpg" alt="Marketing Image 4">
+            <img src="Marketing 5.jpg" alt="Marketing Image 5">
+            <button onclick="hideSkillSlide('marketingSlide')">Back</button>
+        </div>
+
+        <div id="copywritingSlide" class="skill-slide">
+            <h3>Copywriting</h3>
+            <img src="PKM.png" alt="Copywriting Image 1">
+            <img src="PKM2.png" alt="Copywriting Image 2">
+            <button onclick="hideSkillSlide('copywritingSlide')">Back</button>
+        </div>
+
+        <div id="photographySlide" class="skill-slide">
+            <h3>Photography</h3>
+            <img src="Photography 1.jpg" alt="Photography Image 1">
+            <img src="Photography 2.jpg" alt="Photography Image 2">
+            <img src="Photography 3.jpg" alt="Photography Image 3">
+            <img src="Photography4.jpg" alt="Photography Image 4">
+            <img src="Photography 5.jpg" alt="Photography Image 5">
+            <img src="Photography 6.jpg" alt="Photography Image 6">
+            <button onclick="hideSkillSlide('photographySlide')">Back</button>
+        </div>
+
+        <!-- CSS: Hide Slides by Default -->
+        <style>
+            .skill-slide {
+                display: none; /* Hide slides by default */
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 80%; /* Increase width */
+                max-width: 600px; /* Set a maximum width for responsiveness */
+                height: 80%; /* Increase height */
+                max-height: 500px; /* Set a maximum height for responsiveness */
+                background-color: white;
+                padding: 20px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+                overflow-y: auto; /* Allows scrolling if content exceeds height */
+            }
+
+            .skill-slide img {
+                max-width: 400px; /* Adjust the width as needed */
+                height: auto; /* Maintain the aspect ratio */
+                margin: 50px 0; /* Add some space around images if desired */
+            }
+
+        </style>
+
+        <!-- JavaScript for Showing and Hiding Skill Slides -->
+        <script>
+            function showSkillSlide(slideId) {
+                document.getElementById(slideId).style.display = "block";
+            }
+
+            function hideSkillSlide(slideId) {
+                document.getElementById(slideId).style.display = "none";
+            }
+        </script>
+
+
+<body>
+
         <!-- Slide Skill dan Pengalaman Organisasi -->
-        <section id="skills-slide" class="slide hidden">
+        <section id="skills-slide" class="PengalamanOrganisasi">
             <h2>Performance and Organizational Experience</h2>
             <h3>Performance</h3>
             <ul>
                 <li>Finalis Dekan CUP Fakultas Ilmu Komputer Universitas Brawijaya / 2024</li>
                 <li>Finalis Olimpiade Matematika Bimbel Airlangga / 2023</li>
                 <li>Peserta Olimpiade Sosiologi Bimbel Airlangga / 2022</li>
-                <li>Juara 3 Lomba Mobile Lagends Provinsi / 2022 </li>
+                <li>Juara 3 Lomba Mobile Legends Provinsi / 2022 </li>
                 <li>Peserta Lomba Menulis Essay Universitas Muhammadiyah Ponorogo / 2022</li>
             </ul>
             <h3>Organizational Experience</h3>
@@ -95,13 +199,133 @@
                 <li>Anggota Ruang Edit Indonesia / 2024</li>
                 <li>Sekretaris Dewan Ambalan Diponegoro RA Kartini SMA N 1 Slahung / 2022-2023</li>
                 <li>Anggota Pecinta Alam Slahung Community / 2022-2023</li>
-                <li>Anggota Dewan Keja Cabang Ponorogo / 2023</li>
+                <li>Anggota Dewan Kerja Cabang Ponorogo / 2023</li>
                 <li>Anggota Dewan Galang SMP N 1 Balong / 2018-2020</li>
                 <li>Anggota Palang Merah Remaja / 2018-2020</li>
             </ul>
         </section>
-    
+
+     <!-- Button to Trigger Show Slide -->
+     <button onclick="showSlide()">Show more</button>
+
+     <!-- Slide Dokumentasi Skill dan Pengalaman Organisasi -->
+    <section id="Dokumentasi" class="slide hidden">
+        <h2>Performance and Organizational Experience</h2>
+        <h3>Performance</h3>
+        <ul>
+            <img src="Juara 1.jpg" alt="Juara 1">
+            <img src="Juara 2.jpg" alt="Juara 2">
+            <img src="Juara 3.jpg" alt="Juara 3">
+            <img src="Juara 4.jpg" alt="Juara 4">
+            <img src="Juara 5.jpg" alt="Juara 5">
+            <img src="Juara 6.jpg" alt="Juara 6">
+            <img src="Juara 7.jpg" alt="Juara 7">
+            <img src="Juara 8.jpg" alt="Juara 8">
+            <img src="Juara 9.jpg" alt="Juara 9">
+        </ul>
+        <h3>Organizational Experience</h3>
+        <ul>
+            <img src="Organisasi 1.jpg" alt="Organisasi 1">
+            <img src="Organisasi 2.jpg" alt="Organisasi 2">
+            <img src="Organisasi 3.jpg" alt="Organisasi 3">
+            <img src="Organisasi 4.jpg" alt="Organisasi 4">
+            <img src="Organisasi 5.jpg" alt="Organisasi 5">           
+            <img src="Organisasi 6.jpg" alt="Organisasi 6">
+            <img src="Organisasi 7.jpg" alt="Organisasi 7">
+            <img src="Organisasi 8.jpg" alt="Organisasi 8">
+            <img src="Organisasi 9.jpg" alt="Organisasi 9">
+            <img src="Organisasi 10.jpg" alt="Organisasi 10">
+            <img src="Organisasi 11.jpg" alt="Organisasi 11">
+            <img src="Organisasi 12.jpg" alt="Organisasi 12">
+            <img src="Organisasi 13.jpg" alt="Organisasi 13">
+            <img src="Organisasi 14.jpg" alt="Organisasi 14">
+            <img src="Organisasi 15.jpg" alt="Organisasi 15">
+            <img src="Organisasi 16.jpg" alt="Organisasi 16">            
+            <img src="Organisasi 17.jpg" alt="Organisasi 17">
+            <img src="Organisasi 18.jpg" alt="Organisasi 18">
+            <img src="Organisasi 19.jpg" alt="Organisasi 19">
+            <img src="Organisasi 20.jpg" alt="Organisasi 20">
+            <img src="Organisasi 21.jpg" alt="Organisasi 21">
+            <img src="Organisasi 1M.jpg" alt="Organisasi 22">
+            <img src="Organisasi 2M.jpg" alt="Organisasi 23">
+            <img src="Organisasi 3M.jpg" alt="Organisasi 24">
+            <img src="Organisasi 4M.jpg" alt="Organisasi 25">
+            <img src="Organisasi 5M.jpg" alt="Organisasi 26">
+            <img src="Organisasi 6M.jpg" alt="Organisasi 27">
+            <img src="Organisasi 7M.jpg" alt="Organisasi 28">
+            <img src="KWU.jpg" alt="Organisasi 29">
+            <img src="KWU 2.jpg" alt="Organisasi 30">
+        </ul>
+        <button onclick="hideSlide()">Back</button>
+    </section>
+        <!-- CSS for Hidden Class and Scrollable Slide -->
+        <style>
+            .hidden {
+                display: none;
+            }
+            .slide {
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background-color: white;
+                padding: 20px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+                width: 80%; /* Lebar slide */
+                max-height: 80vh; /* Tinggi maksimum slide */
+                overflow-y: auto; /* Tambahkan scroll pada sumbu y */
+            }
+            .slide img {
+                width: 250px; /* Set desired width */
+                height: auto; /* Maintain aspect ratio */
+                margin: 5px; /* Add some spacing between images */
+                border-radius: 5px; /* Optional: rounded corners */
+            }
+
+        </style>
+
+        <!-- JavaScript to Show and Hide Slide -->
         <script>
+            function showSlide() {
+                document.getElementById("Dokumentasi").classList.remove("hidden");
+            }
+
+            function hideSlide() {
+                document.getElementById("Dokumentasi").classList.add("hidden");
+            }
+        </script>
+  
+    <script>
+
+<!-- JavaScript -->
+    // Scroll to Contact Information slide
+    document.getElementById("contact-button").addEventListener("click", function() {
+        document.getElementById("contact-slide").scrollIntoView({ behavior: "smooth" });
+    });
+
+    // Scroll to Skills slide
+    document.getElementById("open-skill-slide").addEventListener("click", function() {
+        document.getElementById("skills").scrollIntoView({ behavior: "smooth" });
+    });
+
+            // Mendapatkan elemen
+        const openSkillButton = document.getElementById("open-skill-slide");
+        const skillSlide = document.getElementById("skill-slide");
+        const backToHomeSkillButton = document.getElementById("back-to-home-skill");
+       // const homeSection = document.querySelector(".intro");
+
+        // Event listener untuk membuka halaman Skill
+        openSkillButton.addEventListener("click", function() {
+            homeSection.classList.add("hidden");
+            skillSlide.classList.remove("hidden");
+        });
+
+        // Event listener untuk tombol "Back to Home" pada halaman Skill
+        backToHomeSkillButton.addEventListener("click", function() {
+            skillSlide.classList.add("hidden");
+            homeSection.classList.remove("hidden");
+        });
+
            // Kode JavaScript untuk navigasi
             const contactButton = document.getElementById("contact-button");
             const contactSlide = document.getElementById("contact-slide");
@@ -142,7 +366,34 @@
         </form>
     </section>
 
+        <!-- Slide Contact -->
+    <section id="contact-slide" class="kontak">
+        <h2>Contact Information</h2>
+        <p>Email: ristanabilla08@gmail.com</p>
+        <p>Phone: +6285649507796</p>
+        <p>Follow me on social media:</p>
+        <ul>
+            <li><a href="https://www.instagram.com/ristaputrii__?igsh=MWlkNXhoOHc3ZG84" target="_blank">Instagram</a></li>
+            <li><a href="https://www.tiktok.com/@nbilla.archiver_?_t=8qkmOqAzEhu&_r=1" target="_blank">Tiktok</a></li>
+            <li><a href="https://www.linkedin.com/in/rista-putri-53b488335?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">LinkedIn</a></li>
+        </ul>
+        <button class="fixed-button" id="back-button">Back to Home</button>
+    </section>
+        
+        <footer>
+            <p>&copy; 2024 RistaPutri - All Rights Reserved</p>
+        </footer>
+
     <script>
+        document.addEventListener("DOMContentLoaded", function() {
+        // Event listener for "Back to Home" button
+        const backButton = document.getElementById("back-button");
+        backButton.addEventListener("click", function() {
+            // Scroll to the 'intro' section
+            document.getElementById("intro").scrollIntoView({ behavior: "smooth" });
+        });
+    });
+
         // Event listener untuk menampilkan pesan konfirmasi
         document.getElementById("contactForm").addEventListener("submit", function(event) {
             event.preventDefault(); // Mencegah submit default
@@ -165,26 +416,36 @@
             });
         });
     </script>
-    
-    <!-- Slide Contac -->
-    <section id="contact-slide" class="slide hidden">
-        <h2>Contact Information</h2>
-        <p>Email: ristanabilla08@gmail.com</p>
-        <p>Phone: +6285649507796</p>
-        <p>Follow me on social media:</p>
-        <ul>
-            <li><a href="https://www.instagram.com/ristaputrii__?igsh=MWlkNXhoOHc3ZG84" target="_blank">Instagram</a></li>
-            <li><a href="https://www.tiktok.com/@nbilla.archiver_?_t=8qkmOqAzEhu&_r=1" target="_blank">Tiktok</a></li>
-            <li><a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a></li>
-        </ul>
-        <button class="fixed-button" id="back-button">Back to Home</button>
-    </section>
 
-    <footer>
-        <p>&copy; 2024 RistaPutri - All Rights Reserved</p>
-    </footer>
 
     <script>
+       document.addEventListener("DOMContentLoaded", function() {
+    // Ambil elemen tombol dan slide
+    const hobbyGoalButton = document.getElementById("hobby-goal-button");
+    const hobbyGoalSlide = document.getElementById("hobby-goal-slide");
+    const aboutSection = document.getElementById("about");
+    const backToAboutButton = document.getElementById("back-to-about-button");
+    const backToHomeButton = document.getElementById("back-to-home-button"); // Tambahkan tombol ini
+
+    // Event listener untuk tombol "Lihat Hobi dan Cita-cita"
+    hobbyGoalButton.addEventListener("click", function() {
+        aboutSection.style.display = "none";
+        hobbyGoalSlide.style.display = "block";
+    });
+
+    // Event listener untuk tombol "Kembali ke About Me"
+    backToAboutButton.addEventListener("click", function() {
+        hobbyGoalSlide.style.display = "none";
+        aboutSection.style.display = "block";
+    });
+
+    // Event listener untuk tombol "Back to Home"
+    backToHomeButton.addEventListener("click", function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' }); // Menggulung ke atas halaman
+    });
+    });
+
+
         // JavaScript untuk animasi mengetik
         const txt = "Hallo everyone, I'm Rista Putri Nabilla 👋"; // Teks yang akan diketik
         let index = 0;

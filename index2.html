@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Rista</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Section untuk Home -->
+    <div id=".intro" class="intro">
+        <img src="rista.jpg" alt="Deskripsi Gambar" class="profile-image">
+        <div class="text-content">
+            <!-- Element untuk efek mengetik -->
+            <h1 class="typewriter"></h1>
+            <p class="sub-intro">Student UB</p>
+            <button class="fixed-button" id="contact-button">Contact Me</button>
+        </div>
+    </div>
+    
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Me</h2>
+        <p>
+            Hello everyone, let me introduce myself, I am Rista Putri Nabilla ('NIM' 235150600111021), you can 
+            call me Rista. I am studying at Brawijaya University, Faculty of Computer Science, Information 
+            Technology Education Study Program. My hope after graduating from this university is that I can get 
+            a job that suits my fashion and my interests, and I can create new business opportunities for others. 
+            My message is, life is a choice and we ourselves determine the choice, if you want your future to be 
+            good then choose a good path to achieve it.
+        </p>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <h2>My Skills</h2>
+        <div class="skills-container">
+            <div class="skill">
+                <h3>Desain Grafis</h3>
+                <div class="skill-bar">
+                    <div class="progress html-css">80%</div>
+                </div>
+            </div>
+            <div class="skill">
+                <h3>Marketing</h3>
+                <div class="skill-bar">
+                    <div class="progress js">90%</div>
+                </div>
+            </div>
+            <div class="skill">
+                <h3>Coppy Writing</h3>
+                <div class="skill-bar">
+                    <div class="progress react">85%</div>
+                </div>
+            </div>
+            <div class="skill">
+                <h3>Drawing</h3>
+                <div class="skill-bar">
+                    <div class="progress nodejs">80%</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <body>
+    
+        <!-- Slide Skill dan Pengalaman Organisasi -->
+        <section id="skills-slide" class="slide hidden">
+            <h2>Performance and Organizational Experience</h2>
+            <h3>Performance</h3>
+            <ul>
+                <li>Finalis Dekan CUP Fakultas Ilmu Komputer Universitas Brawijaya / 2024</li>
+                <li>Finalis Olimpiade Matematika Bimbel Airlangga / 2023</li>
+                <li>Peserta Olimpiade Sosiologi Bimbel Airlangga / 2022</li>
+                <li>Juara 3 Lomba Mobile Lagends Provinsi / 2022 </li>
+                <li>Peserta Lomba Menulis Essay Universitas Muhammadiyah Ponorogo / 2022</li>
+            </ul>
+            <h3>Organizational Experience</h3>
+            <ul>
+                <li>Staff Ahli Departemen Kewirausahaan Eksekutif Mahasiswa Departemen Sistem Informasi / 2023-2024</li>
+                <li>Anggota Ruang Edit Indonesia / 2024</li>
+                <li>Sekretaris Dewan Ambalan Diponegoro RA Kartini SMA N 1 Slahung / 2022-2023</li>
+                <li>Anggota Pecinta Alam Slahung Community / 2022-2023</li>
+                <li>Anggota Dewan Keja Cabang Ponorogo / 2023</li>
+                <li>Anggota Dewan Galang SMP N 1 Balong / 2018-2020</li>
+                <li>Anggota Palang Merah Remaja / 2018-2020</li>
+            </ul>
+        </section>
+    
+        <script>
+           // Kode JavaScript untuk navigasi
+            const contactButton = document.getElementById("contact-button");
+            const contactSlide = document.getElementById("contact-slide");
+            const backButton = document.getElementById("back-button");
+            const homeSection = document.querySelector(".intro");
+            const skillsButton = document.getElementById("skills-button");
+            const skillsSlide = document.getElementById("skills-slide");
+            const backToHomeButton = document.getElementById("back-to-home-button");
+    
+            // Menambahkan event listener untuk tombol "Contact Me"
+            contactButton.addEventListener("click", function() {
+                homeSection.classList.add("hidden");
+                contactSlide.classList.remove("hidden");
+            });
+    
+            // Menambahkan event listener untuk tombol "View Skills"
+            skillsButton.addEventListener("click", function() {
+                homeSection.classList.add("hidden");
+                skillsSlide.classList.remove("hidden");
+            });
+
+            // Menambahkan event listener untuk tombol "Back to Home" di slide contact
+            backButton.addEventListener("click", function() {
+            contactSlide.classList.add("hidden");
+            homeSection.classList.remove("hidden");
+            });
+        </script>
+    </body>
+    
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <form action="https://formspree.io/f/mjkvgvzr" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <script>
+        // Event listener untuk menampilkan pesan konfirmasi
+        document.getElementById("contactForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Mencegah submit default
+    
+            // Mengirim data form menggunakan Formspree
+            const form = event.target;
+            fetch(form.action, {
+                method: form.method,
+                body: new FormData(form),
+                headers: {
+                    'Accept': 'application/json'
+                }
+            }).then(response => {
+                if (response.ok) {
+                    document.getElementById("confirmationMessage").style.display = "block"; // Tampilkan pesan sukses
+                    form.reset(); // Kosongkan form setelah pengiriman berhasil
+                } else {
+                    alert("There was a problem sending your message. Please try again.");
+                }
+            });
+        });
+    </script>
+    
+    <!-- Slide Contac -->
+    <section id="contact-slide" class="slide hidden">
+        <h2>Contact Information</h2>
+        <p>Email: ristanabilla08@gmail.com</p>
+        <p>Phone: +6285649507796</p>
+        <p>Follow me on social media:</p>
+        <ul>
+            <li><a href="https://www.instagram.com/ristaputrii__?igsh=MWlkNXhoOHc3ZG84" target="_blank">Instagram</a></li>
+            <li><a href="https://www.tiktok.com/@nbilla.archiver_?_t=8qkmOqAzEhu&_r=1" target="_blank">Tiktok</a></li>
+            <li><a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a></li>
+        </ul>
+        <button class="fixed-button" id="back-button">Back to Home</button>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 RistaPutri - All Rights Reserved</p>
+    </footer>
+
+    <script>
+        // JavaScript untuk animasi mengetik
+        const txt = "Hallo everyone, I'm Rista Putri Nabilla 👋"; // Teks yang akan diketik
+        let index = 0;
+
+        function typeWriter() {
+            if (index < txt.length) {
+                document.querySelector('.typewriter').textContent += txt.charAt(index);
+                index++;
+                setTimeout(typeWriter, 150); // Waktu antara tiap karakter
+            } else {
+                // After finishing typing, reset index and clear text to restart
+                setTimeout(() => {
+                    index = 0; // Reset index
+                    document.querySelector('.typewriter').textContent = ""; // Clear text
+                    typeWriter(); // Restart typing
+                }, 1000); // Pause before restarting (1 second)
+            }
+        }
+
+        // Mulai animasi saat halaman selesai dimuat
+        window.onload = typeWriter;
+    </script>
+</body>
+</html>
