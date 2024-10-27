@@ -156,7 +156,7 @@ button:hover {
 /* About Section */
 #about {
     padding: 60px 20px;
-    background-color: #fff3e0;
+    background-color: #fff0ce;
     animation: fadeIn 1.5s ease-in-out;
 }
 
@@ -179,7 +179,7 @@ button:hover {
 
 /* Skills Section */
 #skills {
-    background-color: #f9f9f9;
+    background-color: #f7dcdc;
 }
 
 .skills-container {
@@ -221,10 +221,10 @@ button:hover {
 
 .progress {
     height: 100%;
-    background-color: #e91e63;
+    background-color: #ff73a1;
     text-align: right;
     padding-right: 10px;
-    color: white;
+    color: rgb(250, 214, 164);
     border-radius: 10px;
 }
 
@@ -243,7 +243,7 @@ form input, form textarea {
     width: 80%;
     padding: 15px;
     margin: 10px 0;
-    border: 1px solid #ccc;
+    border: 1px solid #f7d5d5;
     border-radius: 5px;
     font-size: 16px;
     transition: box-shadow 0.3s ease;
