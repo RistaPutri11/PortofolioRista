@@ -3,7 +3,7 @@ body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(135deg, #fce4ea, #ffb2db); 
+    background: linear-gradient(135deg, #fce4ea, #ff96AD); 
     animation: gradientBackground 10s ease infinite;
     background-size: 400% 400%;
 
@@ -156,7 +156,7 @@ button:hover {
 /* About Section */
 #about {
     padding: 60px 20px;
-    background-color: #fff8e7;
+    background-color: #FFE7DD;
     animation: fadeIn 1.5s ease-in-out;
 }
 
