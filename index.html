@@ -64,7 +64,7 @@
         <h3>Quotes</h3>
         <p>"A life is a choice and we ourselves determine the choice, if you want your future to be 
             good then choose a good path to achieve it."</p>
-        <button id="back-to-about-button" class="fixed-button">Back to About Me</button>
+        <button id="back-to-about-button" class="fixed-button">Back</button>
     </section>
 
         <!-- Skills Section -->
@@ -90,7 +90,7 @@
                     </div>
                 </div>
                 <div class="skill">
-                    <h3 onclick="showSkillSlide('photographySlide')">Photography</>
+                    <h3 onclick="showSkillSlide('photographySlide')">Photography</h3>
                     <div class="skill-bar">
                         <div class="progress nodejs">80%</div>
                     </div>
@@ -124,6 +124,8 @@
             <h3>Copywriting</h3>
             <img src="PKM.png" alt="Copywriting Image 1">
             <img src="PKM2.png" alt="Copywriting Image 2">
+            <img src="CoppyWriting.png" alt="Copywriting Image 3">
+            <img src="CoppyWriting2.png" alt="Copywriting Image 4">
             <button onclick="hideSkillSlide('copywritingSlide')">Back</button>
         </div>
 
@@ -141,27 +143,26 @@
         <!-- CSS: Hide Slides by Default -->
         <style>
             .skill-slide {
-                display: none; /* Hide slides by default */
+                display: none; 
                 position: fixed;
                 top: 50%;
                 left: 50%;
                 transform: translate(-50%, -50%);
-                width: 80%; /* Increase width */
-                max-width: 600px; /* Set a maximum width for responsiveness */
-                height: 80%; /* Increase height */
-                max-height: 500px; /* Set a maximum height for responsiveness */
+                width: 80%;
+                max-width: 600px; 
+                height: 80%; 
+                max-height: 500px; 
                 background-color: white;
                 padding: 20px;
                 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-                overflow-y: auto; /* Allows scrolling if content exceeds height */
+                overflow-y: auto; 
             }
 
             .skill-slide img {
-                max-width: 400px; /* Adjust the width as needed */
-                height: auto; /* Maintain the aspect ratio */
-                margin: 50px 0; /* Add some space around images if desired */
+                max-width: 400px; 
+                height: auto; 
+                margin: 50px 0;
             }
-
         </style>
 
         <!-- JavaScript for Showing and Hiding Skill Slides -->
@@ -174,10 +175,7 @@
                 document.getElementById(slideId).style.display = "none";
             }
         </script>
-
-
 <body>
-
         <!-- Slide Skill dan Pengalaman Organisasi -->
         <section id="skills-slide" class="PengalamanOrganisasi">
             <h2>Performance and Organizational Experience</h2>
@@ -201,7 +199,6 @@
             </ul>
         </section>
 
-     <!-- Button to Trigger Show Slide -->
      <button onclick="showSlide()">Show more</button>
 
      <!-- Slide Dokumentasi Skill dan Pengalaman Organisasi -->
@@ -254,6 +251,7 @@
         </ul>
         <button onclick="hideSlide()">Back</button>
     </section>
+
         <!-- CSS for Hidden Class and Scrollable Slide -->
         <style>
             .hidden {
@@ -267,15 +265,15 @@
                 background-color: white;
                 padding: 20px;
                 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-                width: 80%; /* Lebar slide */
-                max-height: 80vh; /* Tinggi maksimum slide */
-                overflow-y: auto; /* Tambahkan scroll pada sumbu y */
+                width: 80%; 
+                max-height: 80vh; 
+                overflow-y: auto;
             }
             .slide img {
-                width: 250px; /* Set desired width */
-                height: auto; /* Maintain aspect ratio */
-                margin: 5px; /* Add some spacing between images */
-                border-radius: 5px; /* Optional: rounded corners */
+                width: 250px;
+                height: auto; 
+                margin: 5px; 
+                border-radius: 5px;
             }
 
         </style>
@@ -292,35 +290,33 @@
         </script>
   
     <script>
+            <!-- JavaScript -->
+            // Scroll to Contact Information slide
+            document.getElementById("contact-button").addEventListener("click", function() {
+                document.getElementById("contact-slide").scrollIntoView({ behavior: "smooth" });
+            });
 
-<!-- JavaScript -->
-    // Scroll to Contact Information slide
-    document.getElementById("contact-button").addEventListener("click", function() {
-        document.getElementById("contact-slide").scrollIntoView({ behavior: "smooth" });
-    });
-
-    // Scroll to Skills slide
-    document.getElementById("open-skill-slide").addEventListener("click", function() {
-        document.getElementById("skills").scrollIntoView({ behavior: "smooth" });
-    });
+            // Scroll to Skills slide
+            document.getElementById("open-skill-slide").addEventListener("click", function() {
+                document.getElementById("skills").scrollIntoView({ behavior: "smooth" });
+            });
 
             // Mendapatkan elemen
-        const openSkillButton = document.getElementById("open-skill-slide");
-        const skillSlide = document.getElementById("skill-slide");
-        const backToHomeSkillButton = document.getElementById("back-to-home-skill");
-       // const homeSection = document.querySelector(".intro");
+            const openSkillButton = document.getElementById("open-skill-slide");
+            const skillSlide = document.getElementById("skill-slide");
+            const backToHomeSkillButton = document.getElementById("back-to-home-skill");
 
-        // Event listener untuk membuka halaman Skill
-        openSkillButton.addEventListener("click", function() {
-            homeSection.classList.add("hidden");
-            skillSlide.classList.remove("hidden");
-        });
+            // Event listener untuk membuka halaman Skill
+            openSkillButton.addEventListener("click", function() {
+                homeSection.classList.add("hidden");
+                skillSlide.classList.remove("hidden");
+            });
 
-        // Event listener untuk tombol "Back to Home" pada halaman Skill
-        backToHomeSkillButton.addEventListener("click", function() {
-            skillSlide.classList.add("hidden");
-            homeSection.classList.remove("hidden");
-        });
+            // Event listener untuk tombol "Back to Home" pada halaman Skill
+            backToHomeSkillButton.addEventListener("click", function() {
+                skillSlide.classList.add("hidden");
+                homeSection.classList.remove("hidden");
+            });
 
            // Kode JavaScript untuk navigasi
             const contactButton = document.getElementById("contact-button");
@@ -389,10 +385,9 @@
             document.getElementById("intro").scrollIntoView({ behavior: "smooth" });
         });
     });
-
-        // Event listener untuk menampilkan pesan konfirmasi
-        document.getElementById("contactForm").addEventListener("submit", function(event) {
-            event.preventDefault(); // Mencegah submit default
+            // Event listener untuk menampilkan pesan konfirmasi
+            document.getElementById("contactForm").addEventListener("submit", function(event) {
+            event.preventDefault(); 
     
             // Mengirim data form menggunakan Formspree
             const form = event.target;
@@ -404,15 +399,14 @@
                 }
             }).then(response => {
                 if (response.ok) {
-                    document.getElementById("confirmationMessage").style.display = "block"; // Tampilkan pesan sukses
-                    form.reset(); // Kosongkan form setelah pengiriman berhasil
+                    document.getElementById("confirmationMessage").style.display = "block"; 
+                    form.reset();
                 } else {
                     alert("There was a problem sending your message. Please try again.");
                 }
             });
         });
     </script>
-
 
     <script>
        document.addEventListener("DOMContentLoaded", function() {
@@ -421,7 +415,7 @@
     const hobbyGoalSlide = document.getElementById("hobby-goal-slide");
     const aboutSection = document.getElementById("about");
     const backToAboutButton = document.getElementById("back-to-about-button");
-    const backToHomeButton = document.getElementById("back-to-home-button"); // Tambahkan tombol ini
+    const backToHomeButton = document.getElementById("back-to-home-button"); 
 
     // Event listener untuk tombol "Lihat Hobi dan Cita-cita"
     hobbyGoalButton.addEventListener("click", function() {
@@ -437,31 +431,28 @@
 
     // Event listener untuk tombol "Back to Home"
     backToHomeButton.addEventListener("click", function() {
-        window.scrollTo({ top: 0, behavior: 'smooth' }); // Menggulung ke atas halaman
+        window.scrollTo({ top: 0, behavior: 'smooth' }); 
     });
     });
-
 
         // JavaScript untuk animasi mengetik
-        const txt = "Hallo everyone, I'm Rista Putri Nabilla 👋"; // Teks yang akan diketik
+        const txt = "Hallo everyone, I'm Rista Putri Nabilla 👋"; 
         let index = 0;
 
         function typeWriter() {
             if (index < txt.length) {
                 document.querySelector('.typewriter').textContent += txt.charAt(index);
                 index++;
-                setTimeout(typeWriter, 150); // Waktu antara tiap karakter
+                setTimeout(typeWriter, 150); 
             } else {
-                // After finishing typing, reset index and clear text to restart
                 setTimeout(() => {
-                    index = 0; // Reset index
-                    document.querySelector('.typewriter').textContent = ""; // Clear text
-                    typeWriter(); // Restart typing
-                }, 1000); // Pause before restarting (1 second)
+                    index = 0; 
+                    document.querySelector('.typewriter').textContent = ""; 
+                    typeWriter(); 
+                }, 1000); 
             }
         }
 
-        // Mulai animasi saat halaman selesai dimuat
         window.onload = typeWriter;
     </script>
 </body>

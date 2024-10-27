@@ -3,46 +3,46 @@ body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(135deg, #fce4ec, #ffe0b2); /* Gradasi pink dan cream */
+    background: linear-gradient(135deg, #fce4ec, #ffe0b2); 
     animation: gradientBackground 10s ease infinite;
     background-size: 400% 400%;
 
     #home {
-        display: flex; /* Menggunakan flexbox */
-        align-items: center; /* Mengatur posisi item secara vertikal */
-        justify-content: space-between; /* Memberi jarak antara teks dan gambar */
-        padding: 150px 20px 200px 500px; /* Pastikan ada padding yang cukup */
+        display: flex; 
+        align-items: center; 
+        justify-content: space-between;
+        padding: 150px 20px 200px 500px; 
     }
     
     .intro {
-        margin-top: 150px; /* Atur margin atas sesuai kebutuhan */
-        max-width: 100%; /* Mengatur lebar intro */
-        text-align: left; /* Menjadikan semua teks di dalam intro rata kiri */
-        position: relative; /* Mengatur posisi relatif untuk anak-anak yang diatur secara absolut */
-        display: flex; /* Mengatur elemen menjadi flexbox */
-        align-items: flex-start; /* Menyusun elemen di atas */
+        margin-top: 150px; 
+        max-width: 100%;
+        text-align: left; 
+        position: relative; 
+        display: flex; 
+        align-items: flex-start; 
     }
     
     .sub-intro {
-        margin-top: 10px; /* Jarak antara judul dan sub-judul */
+        margin-top: 10px; 
     }
     
     .fixed-button {
-        display: inline-block; /* Membuat tombol bersebelahan */
-        margin-top: 10px; /* Jarak antara sub-intro dan tombol */
-        margin-right: 10px; /* Jarak antar tombol */
+        display: inline-block; 
+        margin-top: 10px; 
+        margin-right: 10px; 
     }
     
     
     .profile-image {
-        width: 200px; /* Atur lebar gambar sesuai kebutuhan */
-        height: auto; /* Menjaga proporsi gambar */
-        margin-left: 20px; /* Jarak antara gambar dan teks */
-        position: relative; /* Mengatur posisi relatif agar tidak ikut bergerak */
+        width: 200px; 
+        height: auto; 
+        margin-left: 20px; 
+        position: relative; 
     }
     
     .text-content {
-        text-align: left; /* Menjadikan semua teks di dalam text-content rata kiri */
+        text-align: left; 
     }
 }
 
