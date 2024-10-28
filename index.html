@@ -435,24 +435,27 @@
     });
 
         // JavaScript untuk animasi mengetik
-        const txt = "Hallo everyone, I'm Rista Putri Nabilla 👋"; 
-        let index = 0;
+        document.addEventListener("DOMContentLoaded", function() {
+    const txt = "Hallo everyone, I'm Rista Putri Nabilla 👋"; 
+    let index = 0;
 
-        function typeWriter() {
-            if (index < txt.length) {
-                document.querySelector('.typewriter').textContent += txt.charAt(index);
-                index++;
-                setTimeout(typeWriter, 100); 
-            } else {
-                setTimeout(() => {
-                    index = 0; 
-                    document.querySelector('.typewriter').textContent = ""; 
-                    typeWriter(); 
-                }, 1000); 
-            }
+    function typeWriter() {
+        if (index < txt.length) {
+            document.querySelector('.typewriter').textContent += txt.charAt(index);
+            index++;
+            setTimeout(typeWriter, 150);
+        } else {
+            setTimeout(() => {
+                index = 0; 
+                document.querySelector('.typewriter').textContent = ""; 
+                typeWriter(); 
+            }, 1000); 
         }
+    }
 
-        window.onload = typeWriter;
+    typeWriter(); 
+});
+
     </script>
 </body>
 </html>
